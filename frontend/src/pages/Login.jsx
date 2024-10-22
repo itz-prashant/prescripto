@@ -27,7 +27,7 @@ const Login = () => {
             <input
               className="border border-zinc-300 rounded w-full p-2 mt-1"
               type="text"
-              onChange={(e) => setName(e.target.name)}
+              onChange={(e) => setName(e.target.value)}
               value={name}
               required
             />
@@ -39,7 +39,7 @@ const Login = () => {
           <input
             className="border border-zinc-300 rounded w-full p-2 mt-1"
             type="email"
-            onChange={(e) => setEmail(e.target.name)}
+            onChange={(e) => setEmail(e.target.value)}
             value={email}
             required
           />
@@ -49,7 +49,7 @@ const Login = () => {
           <input
             className="border border-zinc-300 rounded w-full p-2 mt-1"
             type="password"
-            onChange={(e) => setpassword(e.target.name)}
+            onChange={(e) => setpassword(e.target.value)}
             value={password}
             required
           />
