@@ -227,4 +227,24 @@ const bookAppointment = async(req,res)=>{
     }
 }
 
-export {registerUser, loginUser, getProfile, updateProfile, bookAppointment}
+// Get user appointment
+
+const listAppointment = async (req, res)=>{
+    try {
+        const {userId} = req.body
+        const appointment = await appointmentModel.find({userId})
+
+        res.json({
+            success: true,
+            appointment
+        })
+    } catch (error) {
+        console.log(error);
+        res.json({
+            success: false,
+            message: error.message
+        })
+    }
+}
+
+export {registerUser, loginUser, getProfile, updateProfile, bookAppointment, listAppointment}

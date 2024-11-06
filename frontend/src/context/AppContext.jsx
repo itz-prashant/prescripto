@@ -42,7 +42,7 @@ const AppContextProvider = (props)=>{
     }
 
     const value = {
-        doctors, currencySynbol, token ,setToken, backendUrl, userData, setUserData, loadUserProfileData
+        doctors, currencySynbol, token ,setToken, backendUrl, userData, setUserData, loadUserProfileData, getDoctorsData
     }
     
     useEffect(()=>{
@@ -53,7 +53,7 @@ const AppContextProvider = (props)=>{
         if(token){
             loadUserProfileData()
         }else{
-            setUserdata(false)
+            setUserData(false)
         }
     },[token])
 
