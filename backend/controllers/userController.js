@@ -203,6 +203,7 @@ const bookAppointment = async(req,res)=>{
             docData,
             amount: docData.fees,
             slotDate,
+            slotTime,
             date: Date.now()
         }
 
