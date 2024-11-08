@@ -266,7 +266,7 @@ const cancelAppointment = async (req, res)=>{
         await appointmentModel.findByIdAndUpdate(appointmentId, {cancelled: true})
 
         // releasing doctor slot
-        const {docId,slotDate,slotTime} = appointmentId
+        const {docId,slotDate,slotTime} = appointmentData
 
         const doctorData = await doctorModel.findById(docId)
 
