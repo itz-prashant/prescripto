@@ -6,6 +6,6 @@ const doctorRouter = express.Router()
 
 doctorRouter.get('/list', doctorList)
 doctorRouter.post('/login', loginDoctor)
-doctorRouter.get('/login',authDoctor, appointmentsDoctor)
+doctorRouter.get('/appointments',authDoctor, appointmentsDoctor)
 
 export default doctorRouter;
