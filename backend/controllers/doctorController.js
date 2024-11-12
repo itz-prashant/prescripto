@@ -103,12 +103,12 @@ const appointmentComplete =async (req,res)=>{
             await appointmentModel.findByIdAndUpdate(appointmentId, {isCompleted:true})
             return res.json({
                 success:true,
-                mesage:"Appointment completed"
+                message:"Appointment completed"
             })
         }else{
             return res.json({
                 success:false,
-                mesage:"Mark Failed"
+                message:"Mark Failed"
             })
         }
     } catch (error) {
@@ -128,12 +128,12 @@ const appointmentCanCel =async (req,res)=>{
             await appointmentModel.findByIdAndUpdate(appointmentId, {cancelled:true})
             return res.json({
                 success:true,
-                mesage:"Appointment cancelled"
+                message:"Appointment cancelled"
             })
         }else{
             return res.json({
                 success:false,
-                mesage:"Cancilation Failed"
+                message:"Cancilation Failed"
             })
         }
     } catch (error) {
