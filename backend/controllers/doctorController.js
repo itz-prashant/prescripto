@@ -174,7 +174,7 @@ const doctorDashboard = async (req, res) =>{
             latestAppointment : appointment.reverse().slice(0,5)
         }
 
-        re.json({
+        res.json({
             success: true,
             dashData
         })
