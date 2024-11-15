@@ -187,4 +187,23 @@ const doctorDashboard = async (req, res) =>{
     }
 }
 
+// Api to get doctor progile fot doctor panel
+const doctorProfile = async (req,res)=>{
+    try {
+        const {docId} = req.body
+        const profileData = await doctorModel.findById(docId).select('-password')
+
+        res.json({
+            success: true,
+            profileData
+        })
+
+    } catch (error) {
+        res.json({
+            success: false,
+            message: error.message
+        })
+    }
+}
+
 export {changeAvailability, doctorList,loginDoctor, appointmentsDoctor, appointmentComplete, appointmentCanCel,doctorDashboard}
