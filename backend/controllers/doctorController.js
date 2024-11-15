@@ -206,4 +206,23 @@ const doctorProfile = async (req,res)=>{
     }
 }
 
-export {changeAvailability, doctorList,loginDoctor, appointmentsDoctor, appointmentComplete, appointmentCanCel,doctorDashboard}
+// Api to update doctor progile fot doctor panel
+const updateDoctorprofile = async(req, res)=>{
+    try {
+        const {docId, fees , address, available} = req.body
+        await doctorModel.findByIdAndUpdate(docId,{fees, address, available})
+
+        res.json({
+            success: true,
+            message: 'Profile Updates'
+        })
+
+    } catch (error) {
+        res.json({
+            success: false,
+            message: error.message
+        })
+    }
+}
+
+export {changeAvailability, doctorList,loginDoctor, appointmentsDoctor, appointmentComplete, appointmentCanCel,doctorDashboard, doctorProfile, updateDoctorprofile}
